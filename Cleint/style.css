@@ -4,17 +4,24 @@
     box-sizing: border-box;
 }
 
-.navLogo {
-    font-family: 'Beth Ellen', cursive;
-    color: #FFFFFF;
-    font-size: 0.8rem;
+html {
+    scroll-behavior: smooth;
 }
+
+body {
+    background-color: #181818;
+    font-family: 'Abhaya Libre', serif;
+    overflow-x: hidden;
+}
+
 
 .headerContainer {
     position: fixed;
     width: 80%;
     left: 50%;
     transform: translateX(-50%);
+    margin-top: 30px;
+    z-index: 1;
 }
 
 .nav {
@@ -24,11 +31,31 @@
 }
 
 .navLinks {
+    float: right;
+    list-style: none;
+    margin-top: 20px;
     display: flex;
-    justify-content: space-around;
-    align-items: center;
 }
 
+.navLinks li {
+    padding: 0px 50px;
+}
+
+.navLinks li a {
+    text-decoration: none;
+    color: #FFFFFF;
+    font-size: 1.2rem;
+}
+
+.navLogo {
+    font-family: 'Beth Ellen', cursive;
+    font-size: 0.8rem;
+}
+
+.logoLink {
+    text-decoration: none;
+    color: #FFFFFF;
+}
 
 .sidebarContainer {
     color: #FFFFFF;
@@ -49,13 +76,176 @@
     font-size: 1.7rem;
 }
 
-.landing {
+.landingContainer {
     background-color: #181818;
     height: 100vh;
     width: 100%;
 }
 
-.nextPage {
+.landing {
+    background-color: #181818;
+    height: 100vh;
+    width: 70%;
+    margin: auto;
+}
+
+.landingText {
+    width: 60%;
+    height: 50%;
+    position: absolute;
+    display: flex;
+    top: 50%;
+    left: 50%;
+    transform: translate(-10%, -15%);
+    z-index: 1;
+}
+
+.landingHeader {
+    font-family: 'Abhaya Libre', serif;
+    font-size: 5rem;
+    color: #FFFFFF;
+}
+
+.landingCircle {
+    width: 600px;
+    height: 600px;
+    top: 50%;
+    left: 50%;
+    transform: translate(35%, 55%);
+    border-radius: 50%;
+    background-color: #BCAEA5;
+}
+
+.blobsContainer {
+    opacity: 0.05;
+    top: 50%;
+    left: 50%;
+    transform: translate(70%, -60%);
+    width: 900px;
+    height: 900px;
+}
+
+#blobSvg1 {
+    position: absolute;
+    width: 100%;
+}
+
+#blobSvg2 {
+    position: absolute;
+    width: 90%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#blobSvg3 {
+    position: absolute;
+    width: 80%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#blobSvg4 {
+    position: absolute;
+    width: 70%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#blobSvg5 {
+    position: absolute;
+    width: 60%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#blobSvg6 {
+    position: absolute;
+    width: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#blobSvg7 {
+    position: absolute;
+    width: 40%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#blobSvg8 {
+    position: absolute;
+    width: 30%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#blobSvg9 {
+    position: absolute;
+    width: 20%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#blobSvg10 {
+    position: absolute;
+    width: 10%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
+.scrollContainer {
+    position: absolute;
+    bottom: 0;
+    padding-bottom: 25px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #FFFFFF;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#chevron {
+    font-size: 2rem;
+    animation: up-down-up 2s infinite;
+}
+
+@keyframes up-down-up {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(10px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.aboutContainer {
+    background-color: #BCAEA5;
+    height: 100vh;
+    width: 100%;
+}
+
+.servicesContainer {
+    background-color: #181818;
+    height: 100vh;
+    width: 100%;
+}
+
+.workContainer {
     background-color: #BCAEA5;
     height: 100vh;
     width: 100%;
