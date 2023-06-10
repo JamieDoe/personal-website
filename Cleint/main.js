@@ -8,7 +8,6 @@ function section1() {
         loop: false,
         showCursor: false,
     });
-
 }
 
 function init() {
