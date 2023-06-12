@@ -20,7 +20,8 @@
     <title>Jamie O Doe</title>
 </head>
 <body>
-    <div class="headerContainer">
+
+    <div id='header' class="headerContainer">
         <div class="nav">
             <div class="navLogo">
                 <h1><a class="logoLink" href="#home">Jamie.O.Doe</a></h1>
@@ -34,6 +35,7 @@
             </div>
         </div>
     </div>
+
     <div class="sidebarContainer">
         <div class="sidebar">
             <div><a title="My Resume" id="sidebarIcons" class="bi bi-file-earmark-person-fill" href="assets/myResume.pdf" download="myResume.pdf"></a></div>
@@ -43,6 +45,7 @@
     </div>
 
     <div class="pageContainer">
+
         <section id="home" class="landingContainer">
             <div class="landing">
                 <div class="landingText">
@@ -211,6 +214,7 @@
                 </div>
             </div>
         </section>
+
         <section id="about" class="aboutContainer">
             <div class="about">
                 <div class="titleContainer">
@@ -220,17 +224,23 @@
                 <div class="aboutContent">
                     <p class="aboutName">Jamie.O.Doe</p>
                     <p class="aboutText">I’m a software engineer and graphic designer 
-                        based in Hampshire, U.k. Studied software 
+                        based in Hampshire, U.K. Studied software 
                         engineering at the University of Portsmouth.
                         Graphic design started as a hobby until I 
                         realised I was good at it. Keep scrolling to 
-                        <br>view my work</p>
+                        <br><span><a class="aboutWorkLink" href="#work">view my work</a></span></p>
                     <div class="resumeContainer">
                         <a href="assets/myResume.pdf" download="myResume.pdf" class="resumeBtn">My Resume</a>
                     </div>
                 </div>
-                <div class="myPhoto">
-                    <img src="img/.jpg" alt="myPhoto">
+                <div class="aboutPhotoContainer">
+                    <div class="cardContainer">
+                        <div class="frontCard">
+                        </div>
+                        <div class="backCard">
+                        </div>
+                    </div>
+                    <p class="facts">hover for facts!</p>
                 </div>
                 <div class="blobsContainerAbout">
                     <svg viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" id="blobSvg1">
@@ -386,15 +396,60 @@
                 </div>
             </div>
         </section>
+
         <section id="services" class="servicesContainer">
-            
+            <div class="services">
+                <div class="serviceTitleContainer">
+                    <h1 class="serviceTitle">My Services</h1>
+                    <h1 class="serviceSubTitle">My Services</h1>
+                    <p class="subText">I provide quality freelance work in the following categories. If you have any enquiries then feel free to contact me :) </p>
+                </div>
+                <div class="textGrid">
+                    <div id="serviceBoxes" class="sofDev">
+                        <h1 id="serviceHeader"><span><i id="serviceIcons" class="bi bi-code-slash"></i></span> Software Development</h1>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin luctus elit sed volutpat elementum. Curabitur non mi orci. Cras molestie mattis felis, nec ornare odio bibendum ac. Sed et dignissim leo, a ultrices leo. Quisque in metus nisl. 
+                        </p>
+                    </div>
+                    <div id="serviceBoxes" class="webDev">
+                        <h1 id="serviceHeader" ><span><i id="serviceIcons" class="bi bi-columns-gap"></i></span> Web-Development</h1>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin luctus elit sed volutpat elementum. Curabitur non mi orci. Cras molestie mattis felis, nec ornare odio bibendum ac. Sed et dignissim leo, a ultrices leo. Quisque in metus nisl. 
+                        </p>
+                    </div>
+                    <div id="serviceBoxes" class="graDes">
+                        <h1 id="serviceHeader" ><span><i id="serviceIcons" class="bi bi-file-image"></i></span> Graphic Design</h1>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin luctus elit sed volutpat elementum. Curabitur non mi orci. Cras molestie mattis felis, nec ornare odio bibendum ac. Sed et dignissim leo, a ultrices leo. Quisque in metus nisl. 
+                        </p>
+                    </div>
+                </div>
+                <div class="enquireBtn">
+                    <a href="#enquire" class="enquireLink">Enquire Now</a>
+                </div>
+            </div>
         </section>
+
         <section id="work" class="workContainer">
-            
+            <div class="workTitleContainer">
+                <h1 class="worktitle">My Work</h1>
+                <h1 class="workSubTitle">My Work</h1>
+            </div>
+            <div class="work">
+                <div class="workContent">
+                    <div id="workBoxes"></div>
+                    <div id="workBoxes"></div>
+                    <div id="workBoxes"></div>
+                    <div id="workBoxes"></div>
+                    <div id="workBoxes"></div>
+                    <div id="workBoxes"></div>
+                </div>
+            </div>
         </section>
+
+        <section id="enquire" class="enquireContainer">
+        </section>
+
     </div>
 
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
     <script src="main.js"></script>
 </body>

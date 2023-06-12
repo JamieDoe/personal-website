@@ -18,16 +18,16 @@ body::-webkit-scrollbar {
     display: none;
 }
 
-
-
 .headerContainer {
     position: fixed;
     width: 80%;
     left: 50%;
     transform: translateX(-50%);
     margin-top: 30px;
+    transition: top 0.3s ease-in-out;
     z-index: 1;
 }
+
 
 .nav {
     display: grid;
@@ -115,18 +115,24 @@ body::-webkit-scrollbar {
 }
 
 .imageContainer {
-    width: 600px;
+    /* position so the bottom edge is aligned with that of .landingContainer */
     position: absolute;
-    top: 50%;
+    bottom: 0;
+    /* center the image horizontally */
     left: 50%;
-    transform: translate(-102%, -23.4%);
+    transform: translateX(-102%);
+    width: 600px;
+    height: 600px;
     z-index: 1;
+
 }
+
 
 .landingImage {
     width: 100%;
     object-fit: cover;
-    
+    position: absolute;
+    bottom: 0;
 }
 
 .landingCircle {
@@ -135,7 +141,8 @@ body::-webkit-scrollbar {
     border-radius: 50%;
     top: 50%;
     left: 50%;
-    transform: translate(20%, 50%);
+    position: absolute;
+    transform: translate(-103%, -30%);
     background-color: #BCAEA5;
 }
 
@@ -143,14 +150,16 @@ body::-webkit-scrollbar {
     opacity: 0.05;
     top: 50%;
     left: 50%;
-    transform: translate(70%, -65%);
+    transform: translate(-20%, -50%);
     width: 900px;
     height: 900px;
+    position: relative;
 }
 
 #blobSvg1 {
     position: absolute;
     width: 100%;
+    z-index: 0.5;
 }
 
 #blobSvg2 {
@@ -159,6 +168,7 @@ body::-webkit-scrollbar {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    z-index: 0.5;
 }
 
 #blobSvg3 {
@@ -167,6 +177,7 @@ body::-webkit-scrollbar {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    z-index: 0.5;
 }
 
 #blobSvg4 {
@@ -175,6 +186,7 @@ body::-webkit-scrollbar {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    z-index: 0.5;
 }
 
 #blobSvg5 {
@@ -183,6 +195,7 @@ body::-webkit-scrollbar {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    z-index: 0.5;
 }
 
 #blobSvg6 {
@@ -191,6 +204,7 @@ body::-webkit-scrollbar {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    z-index: 0.5;
 }
 
 #blobSvg7 {
@@ -199,6 +213,7 @@ body::-webkit-scrollbar {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    z-index: 0.5;
 }
 
 #blobSvg8 {
@@ -207,6 +222,7 @@ body::-webkit-scrollbar {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    z-index: 0.5;
 }
 
 #blobSvg9 {
@@ -215,6 +231,7 @@ body::-webkit-scrollbar {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    z-index: 0.5;
 }
 
 #blobSvg10 {
@@ -223,6 +240,7 @@ body::-webkit-scrollbar {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    z-index: 0.5;
 }
 
 
@@ -272,19 +290,19 @@ body::-webkit-scrollbar {
     opacity: 0.03;
     top: 50%;
     left: 50%;
-    transform: translate(15%, 0%);
+    transform: translate(15%, 5%);
     width: 1000px;
     height: 1000px;
-    z-index: -1;
+    z-index: 0.5;
 }
 
 .titleContainer {
     width: 500px;
-    height: 300px;
+    height: 200px;
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-80%, 200%);
+    transform: translate(-80%, 380%);
 }
 
 .title {
@@ -319,9 +337,10 @@ body::-webkit-scrollbar {
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-72%, 155%);
+    transform: translate(-72%, 170%);
     font-family: 'Beth Ellen', cursive;
     color: rgba(125, 73, 42, 1);
+    z-index: 1;
 }
 
 .aboutName {
@@ -339,22 +358,58 @@ body::-webkit-scrollbar {
     color: #181818;
 }
 
-.myPhoto {
-    width: 400px;
+.aboutPhotoContainer {
+    width: 475px;
     height: 550px;
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(70%, 125%);
-    background-color: grey;
+    transform: translate(60%, 150%);
     z-index: 1;
     border-radius: 1%;
 }
 
-.servicesContainer {
-    background-color: #181818;
-    height: 100vh;
+.aboutPhotoContainer:hover > .cardContainer {
+    transform: rotateY(180deg);
+}
+
+.cardContainer {
+    width: 450px;
+    height: 550px;
+    position: relative;
+    float: right;
+    cursor: pointer;
+    transition: 1s;
+    transform-style: preserve-3d;
+}
+
+.frontCard {
     width: 100%;
+    height: 100%;
+    background-image: url('images/picOfme.png');
+    background-size: cover;
+    filter: grayscale(100%);
+    position: absolute;
+    border-radius: 1%;
+    float: right;
+    backface-visibility: hidden;
+}
+
+.backCard {
+    width: 100%;
+    height: 100%;
+    border-radius: 1%;
+    position: absolute;
+    float: right;
+    background-color: #181818;
+    transform: rotateY(180deg);
+    backface-visibility: hidden;
+}
+
+.facts {
+    transform: rotate(-90deg);
+    float: left;
+    transform-origin: left top 0;
 }
 
 .resumeContainer {
@@ -371,7 +426,11 @@ body::-webkit-scrollbar {
     border-radius: 5px;
     font-family: 'Abhaya Libre', serif;
     opacity: 0.3;
-    z-index: 1;
+    transition: 0.5s;
+}
+
+.resumeContainer:hover {
+    opacity: 0.5;
 }
 
 .resumeBtn {
@@ -384,8 +443,230 @@ body::-webkit-scrollbar {
     align-items: center;
     justify-content: center;
 }
+
+.aboutWorkLink {
+    text-decoration: none;
+    color: rgba(125, 73, 42, 1);
+}
+
+
+.servicesContainer {
+    background-color: #181818;
+    height: 100vh;
+    width: 100%;
+
+}
+
+.services {
+    width: 1500px;
+    height: 100vh;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.serviceTitleContainer {
+    width: 700px;
+    height: 200px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-90%, -200%);
+    color: #FFFFFF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.serviceTitle {
+    font-size: 7rem;
+    font-family: 'Abhaya Libre', serif;
+    font-weight: 100;
+    background: linear-gradient(180deg, #BCAEA5 0%, rgba(188, 174, 165, 0.541667) 17.71%, rgba(188, 174, 165, 0) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+}
+
+.serviceSubTitle {
+    font-size: 4rem;
+    font-family: 'Abhaya Libre', serif;
+    font-weight: 100;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 0%);
+}
+
+.subText {
+    font-size: 1.2rem;
+    font-family: 'Abhaya Libre', serif;
+    font-weight: 100;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-45%, 200%);
+    width: 550px;
+}
+
+.textGrid {
+    width: 100%;
+    height: 350px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    grid-gap: 100px;
+    color: #FFFFFF;
+    font-family: 'Abhaya Libre', serif;
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 50%;
+    left: 50%;
+    transform: translate(0%, 40%);
+}
+
+#serviceBoxes {
+    width: 400px;
+    height: 100%;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+}
+
+#serviceIcons {
+    margin-right: 15px;
+} 
+
+#serviceBoxes > p {
+    margin-top: 20px;
+    font-size: 1.3rem;
+    font-family: 'Abhaya Libre', serif;
+    font-weight: 100;
+    text-align: justify;
+}
+
+#serviceHeader {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.enquireBtn {
+    width: 220px;
+    height: 60px;
+    background-color: rgba(125, 73, 42, 1);
+    border-radius: 3px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 500%);
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.enquireBtn:hover {
+    background-color: rgba(125, 73, 42, 0.8);
+}
+
+.enquireLink {
+    width: 220px;
+    height: 60px;
+    text-decoration: none;
+    color: #FFFFFF;
+    font-size: 1.3rem;
+    font-family: 'Abhaya Libre', serif;
+    font-weight: 100;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.5s;
+}
+
+.enquireLink:hover {
+    transform: scale(1.05);
+}
+
+
 .workContainer {
+    background-color: #181818;
+    height: 100vh;
+    width: 100%;
+}
+
+.work {
+    width: 1500px;
+    height: 100vh;
+    margin: auto;
+    position: relative;
+}
+
+.workTitleContainer {
+    width: 100%;
+    height: 200px;
+    background-color: #BCAEA5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.worktitle {
+    font-size: 7rem;
+    font-family: 'Abhaya Libre', serif;
+    font-weight: 100;
+    background: linear-gradient(180deg, rgba(125, 73, 42, 0.3) 0%, rgba(125, 73, 42, 0.151562) 67.19%, rgba(125, 73, 42, 0) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+}
+
+.workSubTitle {
+    font-size: 4.5rem;
+    font-family: 'Abhaya Libre', serif;
+    font-weight: 200;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -20%);
+}
+
+.workContent {
+    width: 100%;
+    height: 700px;
+    display: grid;
+    grid-template-columns: minmax(200px, auto) minmax(200px, auto) minmax(200px, auto) minmax(200px, auto);
+    grid-gap: 15px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -65%);
+}
+
+#workBoxes {
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+    background-color: #FFFFFF;
+}
+
+#workBoxes:nth-of-type(6) {
+    grid-column-start: 3;
+    grid-column-end: span 2;
+}
+
+#workBoxes:nth-of-type(2) {
+    grid-row-start: span 2;
+}
+.enquireContainer {
     background-color: #BCAEA5;
     height: 100vh;
     width: 100%;
 }
+
