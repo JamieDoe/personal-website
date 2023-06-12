@@ -20,25 +20,30 @@ body::-webkit-scrollbar {
 
 .headerContainer {
     position: fixed;
-    width: 80%;
+    width: 100%;
     left: 50%;
     transform: translateX(-50%);
-    margin-top: 30px;
     transition: top 0.3s ease-in-out;
-    z-index: 1;
+    z-index: 10;
+    display: flex;
+    justify-content: center;
 }
 
 
 .nav {
     display: grid;
+    width: 80%;
     grid-template-columns: 1fr 4fr;
     text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    align-items: center;
+    z-index: 1;
 }
 
 .navLinks {
     float: right;
     list-style: none;
-    margin-top: 20px;
     display: flex;
 }
 
@@ -61,6 +66,18 @@ body::-webkit-scrollbar {
     text-decoration: none;
     color: #FFFFFF;
 }
+
+.navBackground {
+    background-color: #181818;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0.1;
+    opacity: 0.5;
+}
+
 
 .sidebarContainer {
     color: #FFFFFF;
@@ -465,6 +482,7 @@ body::-webkit-scrollbar {
     align-items: center;
     justify-content: center;
     position: relative;
+
 }
 
 .serviceTitleContainer {
@@ -568,6 +586,7 @@ body::-webkit-scrollbar {
     transform: translate(-50%, 500%);
     cursor: pointer;
     transition: 0.5s;
+    z-index: 1;
 }
 
 .enquireBtn:hover {
@@ -597,6 +616,33 @@ body::-webkit-scrollbar {
     background-color: #181818;
     height: 100vh;
     width: 100%;
+    position: relative;
+}
+
+.serviceBackground {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-image: url('images/serviceBackground.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    opacity: 0.05;
+    top:0;
+    z-index: 0.2;
+}
+
+.background {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-image: url('images/workBackground.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    opacity: 0.05;
+    top:0;
+    z-index: 0.2;
 }
 
 .work {
@@ -614,6 +660,7 @@ body::-webkit-scrollbar {
     align-items: center;
     justify-content: center;
     position: relative;
+    z-index: 1;
 }
 
 .worktitle {
@@ -653,7 +700,10 @@ body::-webkit-scrollbar {
     width: 100%;
     height: 100%;
     border-radius: 5px;
-    background-color: #FFFFFF;
+    background-color: grey;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 #workBoxes:nth-of-type(6) {
@@ -664,6 +714,7 @@ body::-webkit-scrollbar {
 #workBoxes:nth-of-type(2) {
     grid-row-start: span 2;
 }
+
 .enquireContainer {
     background-color: #BCAEA5;
     height: 100vh;

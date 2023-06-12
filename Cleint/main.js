@@ -10,6 +10,17 @@ function section1() {
     });
 }
 
+let prevScrollpos = window.pageYOffset;
+window.onscroll = function () {
+    let currentScrollPos = window.pageYOffset;
+    if (prevScrollpos > currentScrollPos) {
+        document.querySelector(".headerContainer").style.top = "0";
+    } else {
+        document.querySelector(".headerContainer").style.top = "-100px";
+    }
+    prevScrollpos = currentScrollPos;
+}
+
 
 function init() {
     section1();
