@@ -22,7 +22,22 @@ window.onscroll = function () {
 }
 
 function onHover() {
-    // on hover of work boxes, display their unique descriptio
+    // on hover of work boxes, display their unique hiddenContent
+    let workBoxes = document.querySelectorAll("#workBoxes");
+    let hiddenContent = document.querySelectorAll(".hiddenContent");
+
+    for (let i = 0; i < workBoxes.length; i++) {
+        workBoxes[i].addEventListener("mouseover", function () {
+            hiddenContent[i].style.display = "block";
+            // also give hiddenContent a display of grid
+            hiddenContent[i].style.display = "grid";
+            hiddenContent[i].style.gridTemplateColumns = "1fr";
+            hiddenContent[i].style.gridTemplateRows = "1fr 3fr 1fr";
+        });
+        workBoxes[i].addEventListener("mouseout", function () {
+            hiddenContent[i].style.display = "none";
+        });
+    }
 }
 
 

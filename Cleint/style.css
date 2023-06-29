@@ -703,10 +703,7 @@ body::-webkit-scrollbar {
     display: grid;
     grid-template-columns: minmax(200px, auto) minmax(200px, auto) minmax(200px, auto) minmax(200px, auto);
     grid-gap: 15px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -65%);
+    margin-top: 50px;
 }
 
 #workBoxes {
@@ -716,24 +713,50 @@ body::-webkit-scrollbar {
     background-color: grey;
     cursor: pointer;
     background-color: #BCAEA5;
-}
-
-#workBoxes:nth-of-type(6) {
-    grid-column-end: span 2;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 #workBoxes:nth-of-type(2) {
     grid-row-start: span 2;
 }
 
-/*.hiddenContent {
+#workBoxes:nth-of-type(6) {
+    grid-column-end: span 2;
+}
+
+.hiddenContent {
     display: none;
-    font-size: 3rem;
+    height: 100%;
     font-family: 'Abhaya Libre', serif;
     font-weight: 100;
     color: #FFFFFF;
+    position: absolute;
+    padding: 20px;
 }
-*/
+
+.wTitle {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.wDescription {
+    font-size: 1rem;
+    margin-bottom: 10px;
+    padding: 20px;
+}
+
+.wBtn1 {
+    width: 220px;
+    height: 60px;
+    background-color: rgba(125, 73, 42, 1);
+    border-radius: 3px;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
 
 .footerContainer {
     background-color: #BCAEA5;
