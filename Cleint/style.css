@@ -624,14 +624,6 @@ body::-webkit-scrollbar {
     transform: scale(1.05);
 }
 
-
-.workContainer {
-    background-color: #181818;
-    height: 100vh;
-    width: 100%;
-    position: relative;
-}
-
 .serviceBackground {
     width: 100%;
     height: 100%;
@@ -645,7 +637,14 @@ body::-webkit-scrollbar {
     z-index: 0.2;
 }
 
-.background {
+.workContainer {
+    background-color: #181818;
+    height: 100vh;
+    width: 100%;
+    position: relative;
+}
+
+/*.background {
     width: 100%;
     height: 100%;
     position: absolute;
@@ -655,8 +654,8 @@ body::-webkit-scrollbar {
     background-position: center;
     opacity: 0.05;
     top:0;
-    z-index: 0.2;
 }
+*/
 
 .work {
     width: 1500px;
@@ -697,6 +696,65 @@ body::-webkit-scrollbar {
     transform: translate(-50%, -20%);
 }
 
+.wrapper {
+    max-width: 1200px;
+    overflow: hidden;
+    margin: auto;
+    position: relative;
+    padding: 0px;
+}
+
+#left {
+    color: #FFFFFF;
+    font-size: 2rem;
+    cursor: pointer;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(0%, -50%);
+}
+
+#right {
+    color: #FFFFFF;
+    font-size: 2rem;
+    cursor: pointer;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(0%, -50%);
+}
+
+.wrapper .carousel {
+    font-size: 0px;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.carousel img {
+    height: 340px;
+    width: calc(100% / 3);
+    object-fit: cover;
+    margin-left: 15px;
+    scroll-behavior: smooth;
+}
+
+.carousel img:first-child {
+    margin-left: 0px;
+}
+
+@media screen and (max-width: 900px) {
+    .carousel img {
+        width: calc(100% / 2);
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .carousel img {
+        width: 100%;
+    }
+}
+
+/*
 .workContent {
     width: 100%;
     height: 700px;
@@ -756,67 +814,101 @@ body::-webkit-scrollbar {
     cursor: pointer;
     transition: 0.5s;
 }
+*/
 
-
-.footerContainer {
+.enquireContainer {
     background-color: #BCAEA5;
     height: 100vh;
     width: 100%;
     position: relative;
     display: flex;
+    align-items: center;
     justify-content: center;
 }
 
 .enquireFormContainer {
-    width: 1000px;
-    height: 70%;
+    width: 1200px;
+    height: 700px;
+    background-color: #FFFFFF;
     display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 1.5fr 3fr;
-    place-items: center;
+    grid-template-columns: 1fr 1.7fr;
+    grid-template-rows: 1fr;
+    align-items: center;
+    border-radius: 10px;
+    /* add a subtle box-shadow more pronounced than the last one */
+    box-shadow: 0px 0px 30px 0px rgba(0,0,0,0.3)
 }
 
 .enquireTitleContainer {
     width: 100%;
     height: 100%;
-    position: relative;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    background-color: #181818;
+    padding: 10%;
+    position: relative;
+    box-shadow: 0px 0px 22px 0px rgba(0,0,0,0.6);
+    clip-path: inset(0px -30px 0px 0px);
 }
 
 .enquireHeader {
-    font-size: 6rem;
+    font-size: 5rem;
     font-family: 'Abhaya Libre', serif;
-    background: linear-gradient(180deg, rgba(125, 73, 42, 0.3) 0%, rgba(125, 73, 42, 0.151562) 67.19%, rgba(125, 73, 42, 0) 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    text-fill-color: transparent;
-    margin: 60px 0 20px 0;
+    font-weight: 100;
+    color: #FFFFFF;
+    margin-bottom: 10px;
 }
 
-.enquireSubHeader {
-    font-size: 4.7rem;
+.enquireText {
+    font-size: 1.7rem;
     font-family: 'Abhaya Libre', serif;
-    font-weight: 200;
+    font-weight: 100;
+    color: #FFFFFF;
+    margin-top: 20px;
+    margin-bottom: 50px;
+}
+
+.contactInfo {
+    font-size: 1.5rem;
+    font-family: 'Abhaya Libre', serif;
+    font-weight: 100;
+    color: #FFFFFF;
     margin-bottom: 20px;
-    position: absolute;
-    top: 50%;
-    left: 0;
-    transform: translate(22%, -30%);
 }
 
+.enquireUnderline {
+    width: 40%;
+    height: 1px;
+    background-color: #FFFFFF;
+    margin-bottom: 20px;
+}
+
+.contactEmail {
+    text-decoration: none;
+    color: #FFFFFF;
+    font-size: 1.2rem;
+    font-family: 'Abhaya Libre', serif;
+    font-weight: 100;
+    margin-bottom: 20px;
+}
+
+.phoneNumber {
+    color: #FFFFFF;
+    font-size: 1.2rem;
+    font-family: 'Abhaya Libre', serif;
+    font-weight: 100;
+}
 
 .formContainer {
-    width: 700px;
+    margin: auto;
+    margin-top: 125px;
+    width: 600px;
     height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: center;
     z-index: 1;
-
 }
 
 .form {
@@ -840,7 +932,7 @@ body::-webkit-scrollbar {
     height: 100%;
     border: none;
     border-radius: 2px;
-    background-color: #D9D9D9;
+    border-bottom: 2px solid #181818;
     font-family: 'Abhaya Libre', serif;
     font-weight: 100;
     font-size: 1.18rem;
@@ -853,7 +945,7 @@ body::-webkit-scrollbar {
     height: 100%;
     border: none;
     border-radius: 2px;
-    background-color: #D9D9D9;
+    border-bottom: 2px solid #181818;
     font-family: 'Abhaya Libre', serif;
     font-weight: 100;
     font-size: 1.3rem;
@@ -866,11 +958,12 @@ body::-webkit-scrollbar {
     height: 40px;
     border: none;
     border-radius: 2px;
-    background-color: #D9D9D9;
+    border-bottom: 2px solid #181818;
     font-family: 'Abhaya Libre', serif;
     font-weight: 100;
     font-size: 1.3rem;
     padding: 10px;
+    margin-bottom: 50px;
 }
 
 #message {
@@ -881,26 +974,30 @@ body::-webkit-scrollbar {
     font-weight: 100;
     font-size: 1.3rem;
     padding: 10px;
-    background-color: #D9D9D9;
+    margin-bottom: 35px;
     border: none;
-    border-radius: 2px;
+    border-top: 2px solid #181818;
+    border-bottom: 2px solid #181818;
 }
 
 #submit {
-    width: 200px;
-    height: 50px;
+    width: 100%;
+    height: 60px;
+    background-color: #181818;
     border: none;
     border-radius: 2px;
-    font-size: 1.3rem;
+    color: #FFFFFF;
     font-family: 'Abhaya Libre', serif;
     font-weight: 100;
-    color: #FFFFFF;
-    opacity: 0.7;
-    background-color: #7D492A;
-    display: flex;
-    margin: auto;
-    display: flex;
-    justify-content: center;
+    font-size: 1.3rem;
+    cursor: pointer;
+    transition: 0.5s;
+    border: 2px solid #181818;
+}
+
+#submit:hover {
+    background-color: #FFFFFF;
+    color: #181818;
 }
 
 .blobsContainerEnquire {
@@ -914,15 +1011,19 @@ body::-webkit-scrollbar {
     z-index: 0.1;
 }
 
+.footerContainer {
+    width: 100%;
+    height: 20vh;
+    position: relative;
+}
+
 .footer {
     width:100%;
-    height: 30%;
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 1fr 1fr 1fr;
     place-items: center;
     background-color: #181818;
-    position: absolute;
     bottom: 0;
 }
 
@@ -930,7 +1031,7 @@ body::-webkit-scrollbar {
     font-size: 1.6rem;
     font-family: 'Beth Ellen', cursive;
     font-weight: 100;
-    margin: 10px 0 20px 0;
+    margin: 20px 0 20px 0;
     text-decoration: none;
     color: #FFFFFF;
     display: flex;
